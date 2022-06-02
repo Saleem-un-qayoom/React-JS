@@ -12,16 +12,13 @@ function MainContent() {
 		<div className="project-1-main-content">
 			<div className="content-wrapper">
 				<h1>Fun Facts about React</h1>
-				<div className="project-1-main-content__list">
+				<ul className="project-1-main-content__list">
 					{items.map(val => (
-						<div className="project-1-main-content__list__item">
-							<div className="project-1-main-content__list__item__dot"></div>
-							<div className="project-1-main-content__list__item__text">
-								{val}
-							</div>
-						</div>
+						<li className="project-1-main-content__list__item__text">
+							{val}
+						</li>
 					))}
-				</div>
+				</ul>
 			</div>
 		</div>
 	);

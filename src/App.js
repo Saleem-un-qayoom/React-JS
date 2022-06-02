@@ -1,10 +1,19 @@
-import Project1 from './View/Project1/Project1';
-
+import { Route, Routes, Navigate } from 'react-router-dom';
+import routes from './Routes/Routes';
 function App() {
 	return (
-		<div>
-			<Project1 />
-		</div>
+		<Routes>
+			{routes.map(val =>
+				val.redirectTo ? (
+					<Route
+						path={val.path}
+						element={<Navigate to={val.redirectTo} />}
+					/>
+				) : (
+					<Route path={val.path} element={<val.component />} />
+				)
+			)}
+		</Routes>
 	);
 }
 
